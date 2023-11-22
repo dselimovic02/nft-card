@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Hanken+Grotesk:wght@500;700;800&family=Montserrat:wght@500;700&family=Outfit:wght@300;400;600&family=Overpass:wght@400;700&family=Playfair:ital,opsz,wght@0,5..1200,500;0,5..1200,600;0,5..1200,700;1,5..1200,400&display=swap');
+
+:root{
+    /* ### Primary */
+
+    --blue-text: hsl(215, 51%, 70%);
+    --active-texts: hsl(178, 100%, 50%);
+
+    /* ### Neutral */
+
+    --main-background: hsl(217, 54%, 11%);
+    --card-background: hsl(216, 50%, 16%);
+    --line: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+
+    --light-shadow: hsl(216, 57%, 10.5%);
+    --dark-shadow: hsl(216, 57%, 9%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+html{
+    font-size: 10px;
+    background: var(--main-background);
+}
+
+/*Reusable classes*/
+    .center-content{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .full-viewport-size{
+        width: 100%;
+        height: 100vh;
+    }
+/*Card*/
+    .card{
+        width: 35rem;
+        height: 59.5rem;
+        border-radius: 1.5rem;
+        background: var(--card-background);
+        padding: 2.4rem;
+        box-shadow: 0 3rem 0 1rem var(--dark-shadow),
+                    0 3rem 0 4rem var(--light-shadow),
+                    0 2rem 0 4rem var(--light-shadow);
+    }
+
+/*Image*/
+    .image-container{
+        width: 100%;
+        height: 30rem;
+        border-radius: .9rem;
+        position: relative;
+    }
+    .main-image{
+        width: 100%;
+        border-radius: .9rem;
+    }
+
+/*Image hover effect*/
+    .view{
+        border-radius: .9rem;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: .1rem;
+        left: 0;
+        transition: all .2s ease-in-out;
+    }
+    .view img{
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .view:hover{
+        background: hsl(178, 100%, 50%, 0.4);
+    }
+    .view:hover img{
+        display: block;
+    }
+
+/*Text*/
+
+    .card h1{
+        font-size: 2.2rem;
+        font-weight: 600;
+        margin-top: 2rem;
+    }
+    .card p{
+        color: var(--blue-text);
+        font-size: 1.8rem;
+        margin-top: 1.7rem;
+        line-height: 1.5;
+    }
+    a{
+        text-decoration: none;
+        color: var(--white);
+    }
+    a:hover{
+        color: var(--active-texts);
+    }
+/*Price section*/
+
+    .price-container{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2.2rem;
+    }
+    .price-container p{
+        position: relative;
+        top: -.3rem;
+        left: .5rem;
+        display: inline;
+        font-size: 1.6rem;
+    }
+    .price p {
+        color: var(--active-texts);
+        font-weight: 600;
+    }
+    .price-container .time-left{
+        transform: translateX(-.8rem);
+    }
+
+/*Horizontal line*/
+    .hr-line{
+        border: 0;
+        border-top: 1px solid var(--line);
+        margin-top: 2rem;
+    }
+
+/*Creation section*/
+
+
+    .creation{
+        justify-content: flex-start;
+        margin-top: 1rem;
+    }
+    .creation img{
+        border-radius: 50%;
+        width: 3rem;
+        outline: 1px solid white;
+    }
+    .creation p{
+        font-size: 1.6rem;
+        transform: translate(1.6rem, -.8rem);
+    }
